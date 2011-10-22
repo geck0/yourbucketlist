@@ -71,7 +71,7 @@ function getPage() {
     
     }
     
-        getPage.isLoaded = true;
+    getPage.isLoaded = true;
     
 }
 
@@ -85,3 +85,4 @@ function updateStatusViaJavascriptAPICalling(){
 		alert('Status updated Successfully');
 	}
 	}); 
+};
