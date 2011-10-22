@@ -1257,7 +1257,7 @@ table .headerSortUp.purple, table .headerSortDown.purple {
   padding: 8px 20px 12px;
   margin-left: -20px;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 35px;
   font-weight: 200;
   line-height: 1;
 }
@@ -1344,7 +1344,7 @@ table .headerSortUp.purple, table .headerSortDown.purple {
 }
 .topbar div > ul, .nav {
   display: block;
-  float: left;
+  float: left, bottom;
   margin: 0 10px 0 0;
   position: relative;
   left: 0;
