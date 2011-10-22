@@ -1728,6 +1728,27 @@ a.menu:after, .dropdown-toggle:after {
   line-height: 27px;
 }
 
+.a-unit {
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 25px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.a-unit h1 {
+  margin-bottom: 0;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.a-unit p {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 27px;
+}
+
 footer {
   margin-top: 17px;
   padding-top: 17px;
