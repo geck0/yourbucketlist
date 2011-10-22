@@ -62,7 +62,7 @@ function getPage() {
              
             //add the content retrieved from ajax and put it in the #content div
             $('#content').html(html);
-             
+            
             //display the body with fadeIn transition
             $('#content').fadeTo('fast', 1.0);
                   
@@ -74,30 +74,14 @@ function getPage() {
         getPage.isLoaded = true;
     
 }
-// fb login
-window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '268724529838969',
-    status     : true, 
-    cookie     : true,
-    xfbml      : true
-  });
-};
-// fb get js
-(function(d){
-   var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-   js = d.createElement('script'); js.id = id; js.async = true;
-   js.src = "//connect.facebook.net/en_US/all.js";
-   d.getElementsByTagName('head')[0].appendChild(js);
- }(document));
-// fb post
+
+// fb status
 function updateStatusViaJavascriptAPICalling(){
-    var status  =   "Hello, World!";
-    FB.api('/me/feed', 'post', { message: status }, function(response) {
-        if (!response || response.error) {
-            alert('Error occured');
-        } else {
-            alert('Status updated Successfully');
-        }
-    });
-};
+	var status = "Hello, World!";
+	FB.api('/me/feed', 'post', { message: status }, function(response) {
+	if (!response || response.error) {
+		alert('Error occured');
+	} else {
+		alert('Status updated Successfully');
+	}
+	}); 
