@@ -579,11 +579,9 @@ fieldset {
 }
 fieldset legend {
   display: block;
-  padding-left: 150px;
   font-size: 19.5px;
   line-height: 2;
   color: #404040;
-  *padding: 0 0 5px 145px;
   /* IE6-7 */
 
   *line-height: 1.5;
@@ -622,7 +620,8 @@ label {
   color: #404040;
 }
 form .input {
-  margin-left: 150px;
+  margin-left: 100px;
+  margin-top: 10px;
 }
 input[type=checkbox], input[type=radio] {
   cursor: pointer;
@@ -635,7 +634,7 @@ select,
   width: 300px;
   height: 75px;
   padding: 10px;
-  font-size: 13px;
+  font-size: 30px;
   line-height: 18px;
   color: #808080;
   border: 1px solid #ccc;
@@ -1875,7 +1874,8 @@ footer {
   box-shadow: none;
 }
 .btn.large {
-  font-size: 15px;
+  font-size: 20px;
+  size: 60px;
   line-height: normal;
   padding: 9px 14px 9px;
   -webkit-border-radius: 6px;
