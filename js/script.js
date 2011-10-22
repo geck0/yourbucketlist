@@ -29,8 +29,7 @@ $(document).ready(function () {
         $(this).addClass('active');
          
         //hide the content and show the progress bar
-        $('#content').hide();
-        $('#loading').show();
+        $('#content').fadeOut('slow');
          
         //run the ajax
         getPage();
@@ -56,9 +55,6 @@ function getPage() {
         data: null,    
         cache: false,
         success: function (html) { 
-         
-            //hide the progress bar
-            $('#loading').hide();  
              
             //add the content retrieved from ajax and put it in the #content div
             $('#content').html(html);
