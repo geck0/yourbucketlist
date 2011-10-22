@@ -29,16 +29,19 @@
         <div class="container">
           <a class="brand" href="#">Before6</a>
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Make List</a></li>
-            <li><a href="#contact">Share List</a></li>
+            <li><a href="#home.html" rel="ajax">Home</a></li>
+            <li><a href="#create.html" rel="ajax">Create List</a></li>
+            <li><a href="#mylist.html" rel="ajax">My List</a></li>
           </ul>
         </div>
       </div>
     </nav> <!-- /navigation -->
 
     <section class="container">
-
+	
+		<div id="loading">Loading...</div>
+		<article id="content"></article>
+	
     </section> <!-- /container -->
     
     <footer class="container">
@@ -48,8 +51,21 @@
 	<section id="scripts">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script>window.jQuery||document.write('<script src="js/jquery-1.6.4.min.js"><\/script>');</script>
+		    
+		<script defer src="js/plugins.js"></script>
+		<script defer src="js/script.js"></script>
+		
+		<!-- Change UA-XXXXX-X to be your site's ID 
+		<script>
+		  window._gaq = [['_setAccount','UA-23292973-1'],['_trackPageview'],['_trackPageLoadTime']];
+		  Modernizr.load({
+		    load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+		  });
+		</script> -->
+		
 		<!--[if lt IE 7 ]><script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 		    <script defer>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})});</script><![endif]-->
+		
 	</section>
   </body>
 </html>
