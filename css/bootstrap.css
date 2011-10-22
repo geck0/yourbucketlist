@@ -581,7 +581,7 @@ fieldset legend {
   display: block;
   padding-left: 150px;
   font-size: 19.5px;
-  line-height: 1;
+  line-height: 2;
   color: #404040;
   *padding: 0 0 5px 145px;
   /* IE6-7 */
@@ -632,9 +632,9 @@ textarea,
 select,
 .uneditable-input {
   display: inline-block;
-  width: 210px;
-  height: 18px;
-  padding: 4px;
+  width: 300px;
+  height: 75px;
+  padding: 10px;
   font-size: 13px;
   line-height: 18px;
   color: #808080;
@@ -781,7 +781,12 @@ select.xlarge {
 input.xxlarge,
 textarea.xxlarge,
 select.xxlarge {
-  width: 530px;
+  width: 600px;
+}
+.createlist {
+  width: 700px;
+  
+
 }
 textarea.xxlarge {
   overflow-y: auto;
