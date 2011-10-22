@@ -39,8 +39,7 @@
 
     <section class="container">
 	
-		<div id="loading">Loading...</div>
-		<article id="content"></article>
+		<?php require("home.html"); ?>
 	
     </section> <!-- /container -->
     
