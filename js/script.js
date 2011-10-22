@@ -10,32 +10,34 @@ $(document).ready(function () {
     $.history.init(pageload);  
          
     //highlight the selected link
-    $('a[href="' + document.location.hash + '"]').addClass('current');
+    $('a[href="' + document.location.hash + '"]').parent().addClass('active');
      
     //Seearch for link with REL set to ajax
-    $('a[rel=ajax]').click(function () {
-         
+    $('a[rel=ajax]').click(function (event) {
+        
+        getPage.isLoaded = false
+        
         //grab the full url
         var hash = this.href;
-         
+        
         //remove the # value
         hash = hash.replace(/^.*#/, '');
-         
+        
         //for back button
         $.history.load(hash);  
-         
+        
         //clear the selected class and add the class class to the selected link
-        $('a[rel=ajax]').removeClass('active');
-        $(this).addClass('active');
-         
-        //hide the content and show the progress bar
-        $('#content').fadeOut('slow');
-         
+        $('a[rel=ajax]').parent().removeClass('active');
+        $(this).parent().addClass('active');
+        
+        //hide the content
+        $('#content').fadeTo(1, 0.01);
+        
         //run the ajax
         getPage();
-     
-        //cancel the anchor tag behaviour
+        
         return false;
+     
     });
 });
      
@@ -46,7 +48,9 @@ function pageload(hash) {
 }
          
 function getPage() {
-     
+
+    if(getPage.isLoaded != true) {
+    
     //generate the parameter for the php script
     var data = document.location.hash.replace(/^.*#/, '');
     $.ajax({
@@ -60,8 +64,13 @@ function getPage() {
             $('#content').html(html);
              
             //display the body with fadeIn transition
-            $('#content').fadeIn('slow');
+            $('#content').fadeTo('fast', 1.0);
                   
         }      
     });
+    
+    }
+    
+        getPage.isLoaded = true;
+    
 }
