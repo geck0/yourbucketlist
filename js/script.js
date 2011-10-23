@@ -117,7 +117,9 @@ function logout_callback() {
   getPage();
 }
 
-function initializeMap(googleSearch) {
+var googleSearch;
+
+function initializeMap(search) {
     var mapOptions = {
 	      zoom: 4,
 	      mapTypeControl: true,
@@ -127,7 +129,7 @@ function initializeMap(googleSearch) {
 	    };
 	map = new google.maps.Map(document.getElementById("infoBox"), mapOptions);
 	
-	googleSearch = googleSearch;
+	googleSearch = search;
 	
 	getLocation();
 };
@@ -150,9 +152,10 @@ function searchPlaces(p) {
 	// Set parameters for the Places search
 	var request = {
 		location: pos,
-		radius: '6300000',
-		name: [googleSearch]
+		radius: '630000',
 	};
+
+	request.name = [googleSearch];
 
 	// Search Google Places using parameters
 	service = new google.maps.places.PlacesService(map);
