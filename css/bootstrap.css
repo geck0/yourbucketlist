@@ -1345,7 +1345,7 @@ table .headerSortUp.purple, table .headerSortDown.purple {
 .topbar div > ul, .nav {
   display: block;
   float: left, bottom;
-  margin: 0 10px 0 0;
+  margin: 10px 10px 0 0;
   position: relative;
   left: 0;
 }
