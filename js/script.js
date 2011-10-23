@@ -65,27 +65,6 @@ function getPage() {
             
             validation();
             
-            if (data === 'mylist.html') initializeMap();
-            if (data === 'home.html') {
-            	window.fbAsyncInit = function() {
-            	    FB.init({
-            	      appId      : '268724529838969',
-            	      status     : true, 
-            	      cookie     : true,
-            	      oauth 	 : true,
-            	      xfbml      : true
-            	    });
-            	  };
-            	(function(d, s, id) {
-            	  var js, fjs = d.getElementsByTagName(s)[0];
-            	  if (d.getElementById(id)) {return;}
-            	  js = d.createElement(s); js.id = id;
-            	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=268724529838969";
-            	  fjs.parentNode.insertBefore(js, fjs);
-            	}(document, 'script', 'facebook-jssdk'));
-            };
-            
-            
             //display the body with fadeIn transition
             $('#content').fadeTo('fast', 1.0);
                   
@@ -99,8 +78,8 @@ function getPage() {
 }
 
 // fb status
-function updateStatusViaJavascriptAPICalling(message){
-	var status = message;
+function updateStatusViaJavascriptAPICalling(){
+	var status = "Hello, World!";
 	FB.api('/me/feed', 'post', { message: status }, function(response) {
 	if (!response || response.error) {
 		alert('Error occured');
