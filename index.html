@@ -92,6 +92,26 @@
 		<script defer src="js/plugins.js"></script>
 		<script defer src="js/script.js"></script>
 		
+		<div id="fb-root"></div>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '268724529838969',
+		      status     : true, 
+		      cookie     : true,
+		      oauth 	 : true,
+		      xfbml      : true
+		    });
+		  };
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) {return;}
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=268724529838969";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+		
 		<!-- Change UA-XXXXX-X to be your site's ID 
 		<script>
 		  window._gaq = [['_setAccount','UA-23292973-1'],['_trackPageview'],['_trackPageLoadTime']];
