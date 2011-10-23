@@ -91,6 +91,8 @@ function complete_item(item_id) {
         }  
       });
       
-      updateStatusViaJavascriptAPICalling('I just checked "' + blank + '" off my bucket list.  What have you done lately?');
+      var string = $('#item' + item_id).children()[2].innerHTML;
+      
+      updateStatusViaJavascriptAPICalling('I just checked "' + string + '" off my bucket list.  What have you done lately?');
    
 }
