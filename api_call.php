@@ -14,7 +14,7 @@ if (is_file('sampleSettings.php'))
 }
 
 define('AWS_API_KEY', 'AKIAJVBYHKQ5O4TCSG5A');
-define('AWS_API_SECRET_KEY', '');
+define('AWS_API_SECRET_KEY', 'LebWaI3oIPwqDvbgUa68uLu3TNQd+Xct3SWnX+AW');
 define('AWS_ASSOCIATE_TAG', '');
 
 require 'apis/AmazonECS.class.php';
