@@ -13,8 +13,24 @@ function validation() {
         url: "create_list.php",  
         data: dataString,  
         success: function() {  
-          alert('cool'); 
-        }  
+           getPage.isLoaded = false;
+           
+           //remove the # value
+           hash = 'mylist.html';
+           
+           //for back button
+           $.history.load(hash);  
+           
+           //clear the selected class and add the class class to the selected link
+           $('a[rel=ajax]').parent().removeClass('active');
+           $(this).parent().addClass('active');
+           
+           //hide the content
+           $('#content').fadeTo(1, 0.01);
+           
+           //run the ajax
+           getPage();
+         }  
       });
       
       return false;
