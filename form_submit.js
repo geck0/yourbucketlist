@@ -1,6 +1,5 @@
 function validation() { 
    $("#create_submit").click(function() { 
-      console.log('start');
       
       var email = get_cookie("email");
       var name = get_cookie("name");
@@ -50,4 +49,45 @@ function get_cookie ( cookie_name )
     return ( unescape ( results[2] ) );
   else
     return null;
+}
+
+function delete_item(item_id) {
+   var dataString = 'item_id=' + item_id;
+   
+   $.ajax({  
+        type: "POST",  
+        url: "delete_item.php",  
+        data: dataString,  
+        success: function() {
+           var this_id = "#item"+item_id;
+           var sugg_id = "#suggestion"+item_id;
+           $(this_id).remove();
+           $(sugg_id).remove();
+           
+           console.log('deleted');
+           
+           var field = '<div class="clearfix"><div class="input"><input id="input'+item_id+'" class="createlist"  placeholder="New.." type="text" size="30" name="input'+item_id+'"></div></div>';
+           
+           $('#list_fieldset').append(field);
+           
+        }  
+      });
+   
+}
+
+function complete_item(item_id) {
+   var dataString = 'item_id=' + item_id;
+   
+   $.ajax({  
+        type: "POST",  
+        url: "complete_item.php",  
+        data: dataString,  
+        success: function() {
+           var this_id = "#item"+item_id;
+           var sugg_id = "#suggestion"+item_id;
+           $(this_id).css('background-color','#b7ecbd');
+           $(sugg_id).remove();
+        }  
+      });
+   
 }
