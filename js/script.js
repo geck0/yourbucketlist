@@ -85,4 +85,4 @@ function updateStatusViaJavascriptAPICalling(){
 		alert('Status updated Successfully');
 	}
 	}); 
-};
+};	
