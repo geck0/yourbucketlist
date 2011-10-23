@@ -65,6 +65,27 @@ function getPage() {
             
             validation();
             
+            if (data === 'mylist.html') initializeMap();
+            if (data === 'home.html') {
+            	window.fbAsyncInit = function() {
+            	    FB.init({
+            	      appId      : '268724529838969',
+            	      status     : true, 
+            	      cookie     : true,
+            	      oauth 	 : true,
+            	      xfbml      : true
+            	    });
+            	  };
+            	(function(d, s, id) {
+            	  var js, fjs = d.getElementsByTagName(s)[0];
+            	  if (d.getElementById(id)) {return;}
+            	  js = d.createElement(s); js.id = id;
+            	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=268724529838969";
+            	  fjs.parentNode.insertBefore(js, fjs);
+            	}(document, 'script', 'facebook-jssdk'));
+            };
+            
+            
             //display the body with fadeIn transition
             $('#content').fadeTo('fast', 1.0);
                   
@@ -78,8 +99,8 @@ function getPage() {
 }
 
 // fb status
-function updateStatusViaJavascriptAPICalling(){
-	var status = "Hello, World!";
+function updateStatusViaJavascriptAPICalling(message){
+	var status = message;
 	FB.api('/me/feed', 'post', { message: status }, function(response) {
 	if (!response || response.error) {
 		alert('Error occured');
@@ -114,3 +135,58 @@ function logout_callback() {
   //run the ajax
   getPage();
 }
+
+function initializeMap() {
+    var mapOptions = {
+	      zoom: 4,
+	      mapTypeControl: true,
+	      navigationControl: true,
+	      navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+	      mapTypeId: google.maps.MapTypeId.ROADMAP      
+	    };
+	map = new google.maps.Map(document.getElementById("infoBox"), mapOptions);
+	
+	getLocation();
+};
+
+function getLocation() {
+	if(geo_position_js.init())
+	{
+		geo_position_js.getCurrentPosition(searchPlaces,function(){alert("Couldn't get location")},{enableHighAccuracy:true});
+	}
+	else
+	{
+		alert("Functionality not available");
+	}
+};
+
+function searchPlaces(p) {
+	// Find your coordinates and set up map
+	pos = new google.maps.LatLng(p.coords.latitude,p.coords.longitude);
+	
+	// Set parameters for the Places search
+	var request = {
+		location: pos,
+		radius: '6300000',
+		name: ['restaurant']
+	};
+
+	// Search Google Places using parameters
+	service = new google.maps.places.PlacesService(map);
+	service.search(request, displayResults);
+};
+
+function displayResults(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+  
+  		// use first result and find coordinates
+      var place = results[0];
+      var placeLoc = place.geometry.location;
+      var dest = new google.maps.LatLng(placeLoc.lat(), placeLoc.lng());
+      
+      // Display business name of first result from search
+      document.getElementById('infoBox').innerHTML = "<p>" + place.name + "</p><p>" + place.vicinity + "</p><p>Rating: " + place.rating + "</p>";
+
+	  $('#infoBox').removeAttr('style');
+  };
+};
