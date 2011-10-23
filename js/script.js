@@ -80,7 +80,7 @@ function getPage() {
 // fb status
 function updateStatusViaJavascriptAPICalling(message){
 	var status = message,
-		url = 'http://www.yourbucketli.st',
+		url = 'http://www.yourbucketli.st/?v1',
 		caption = 'Helping you achieve your dreams.';
 	FB.api('/me/feed', 'post', { message: status, link: url, caption: caption }, function(response) {
 	if (!response || response.error) {
