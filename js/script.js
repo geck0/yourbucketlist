@@ -78,8 +78,8 @@ function getPage() {
 }
 
 // fb status
-function updateStatusViaJavascriptAPICalling(){
-	var status = "Hello, World!";
+function updateStatusViaJavascriptAPICalling(message){
+	var status = message;
 	FB.api('/me/feed', 'post', { message: status }, function(response) {
 	if (!response || response.error) {
 		alert('Error occured');
