@@ -63,6 +63,8 @@ function getPage() {
             //add the content retrieved from ajax and put it in the #content div
             $('#content').html(html);
             
+            validation();
+            
             //display the body with fadeIn transition
             $('#content').fadeTo('fast', 1.0);
                   
@@ -85,4 +87,30 @@ function updateStatusViaJavascriptAPICalling(){
 		alert('Status updated Successfully');
 	}
 	}); 
-};	
+};
+
+function logout_callback() {
+
+   console.log('logging out...');
+   
+   $('.nav li:last-child').remove();
+   $('.nav li:last-child').remove();
+   
+   getPage.isLoaded = false;
+
+  //remove the # value
+  hash = 'home.html';
+  
+  //for back button
+  $.history.load(hash);  
+  
+  //clear the selected class and add the class class to the selected link
+  $('a[rel=ajax]').parent().removeClass('active');
+  $(this).parent().addClass('active');
+  
+  //hide the content
+  $('#content').fadeTo(1, 0.01);
+  
+  //run the ajax
+  getPage();
+}
