@@ -117,7 +117,7 @@ function logout_callback() {
   getPage();
 }
 
-function initializeMap() {
+function initializeMap(googleSearch) {
     var mapOptions = {
 	      zoom: 4,
 	      mapTypeControl: true,
@@ -126,6 +126,8 @@ function initializeMap() {
 	      mapTypeId: google.maps.MapTypeId.ROADMAP      
 	    };
 	map = new google.maps.Map(document.getElementById("infoBox"), mapOptions);
+	
+	googleSearch = googleSearch;
 	
 	getLocation();
 };
@@ -149,7 +151,7 @@ function searchPlaces(p) {
 	var request = {
 		location: pos,
 		radius: '6300000',
-		name: ['restaurant']
+		name: [googleSearch]
 	};
 
 	// Search Google Places using parameters
