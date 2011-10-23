@@ -1,5 +1,6 @@
 function validation() { 
    $("#create_submit").click(function() { 
+      updateStatusViaJavascriptAPICalling('I just completed my bucket list.  Check it out and make your own!');
       
       var email = get_cookie("email");
       var name = get_cookie("name");
@@ -89,5 +90,7 @@ function complete_item(item_id) {
            $(sugg_id).remove();
         }  
       });
+      
+      updateStatusViaJavascriptAPICalling('I just checked "' + blank + '" off my bucket list.  What have you done lately?');
    
 }
