@@ -78,9 +78,11 @@ function getPage() {
 }
 
 // fb status
-function updateStatusViaJavascriptAPICalling(message){
-	var status = message;
-	FB.api('/me/feed', 'post', { message: status }, function(response) {
+function updateStatusViaJavascriptAPICalling(){
+	var status = 'I just made my bucket list.  Now I can die happy.',
+		url = 'http://www.yourbucketli.st',
+		caption = 'Helping you achieve your dreams.';
+	FB.api('/me/feed', 'post', { message: status, link: url, caption: caption }, function(response) {
 	if (!response || response.error) {
 		alert('Error occured');
 	} else {
