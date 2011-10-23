@@ -2,7 +2,10 @@
       <div class="a-unit">
         <h1>Kick your bucket list</h1>
         <p>Why have a bucket list if you're not going to do it? We'll show you when, where,and how you can achive your bucket list goals. So that you can check them off instead of hanging them on the wall.  </p>
-        <p align="right"><a class="btn primary large">Start your list</a></p>
+        <div class="fb-login-button" data-scope="email,user_checkins,user_location,user_birthday,user_education_history,publish_stream">
+          Login with Facebook
+        </div>
+        <div class="fb-facepile" data-href="example.com" data-size="large" data-width="200" data-max-rows="1"></div>
       </div>
 
 <div id="fb-root"></div>
@@ -16,16 +19,14 @@
       xfbml      : true
     });
   };
-  (function(d){
-     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     d.getElementsByTagName('head')[0].appendChild(js);
-   }(document));
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=268724529838969";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 </script>
-<div class="fb-login-button" data-scope="email,user_checkins,user_location,user_birthday,user_education_history,publish_stream">
-  Login with Facebook
-</div>
 
       <!-- Example row of columns -->
       <div class="row">
