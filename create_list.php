@@ -1,3 +1,5 @@
+ <section id="content" class="container">
+
 <?php
 $input1 = $_REQUEST['input1'];
 $input2 = $_REQUEST['input2'];
@@ -42,3 +44,4 @@ if ($input5 != '' && $input5 != 'undefined') {
 }
 
 ?>
+   </section> <!-- /container -->

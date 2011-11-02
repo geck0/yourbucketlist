@@ -1,3 +1,4 @@
+<section id="content" class="container">
 <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h1>This is your list.</h1>
@@ -82,3 +83,4 @@ while ($i > 0) {
                   <input id="create_submit" class="btn large primary" type="submit" value="Save List" />
 <?php } ?>
                </div>
+                  </section> <!-- /container -->

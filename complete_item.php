@@ -1,3 +1,5 @@
+ <section id="content" class="container">
+
 <?php
 $item_id = $_REQUEST['item_id'];
 
@@ -13,3 +15,4 @@ $query = "UPDATE items SET status = 1 WHERE id = '$item_id' LIMIT 1";
 $result = mysql_query($query);
 
 ?>
+   </section> <!-- /container -->
