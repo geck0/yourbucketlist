@@ -41,13 +41,17 @@
          
             FB.api('/me', function(response) {
             
-               var myname = response.name;
-               var myemail = response.email;
+               var myname = response.name,
+                   myemail = response.email,
+                   mypicture = response.picture;
+                   
+                   console.log(mypicture);
+               
                
                document.cookie = "name="+myname+";expires=15/02/2012 00:00:00";
                document.cookie = "email="+myemail+";expires=15/02/2012 00:00:00";
                
-               var html = '<li><a href="mylist.php" rel="ajax">'+myname+'\'s List</a></li>';
+               var html = '<span>'+myname+'\'s List</span>';
 
                $('.nav').append(html);
                
