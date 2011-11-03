@@ -1,6 +1,6 @@
 function validation() { 
    $("#create_submit").click(function() { 
-      updateStatusViaJavascriptAPICalling('I just completed my bucket list.  Check it out and make your own!');
+      updateStatusViaJavascriptAPICalling('I just created my bucket list.  Check it out and make your own!');
       
       var email = get_cookie("email");
       var name = get_cookie("name");
@@ -18,23 +18,7 @@ function validation() {
         url: "create_list.php",  
         data: dataString,  
         success: function() {  
-           getPage.isLoaded = false;
            
-           //remove the # value
-           hash = 'mylist.php';
-           
-           //for back button
-           $.history.load(hash);  
-           
-           //clear the selected class and add the class class to the selected link
-           $('a[rel=ajax]').parent().removeClass('active');
-           $(this).parent().addClass('active');
-           
-           //hide the content
-           $('#content').fadeTo(1, 0.01);
-           
-           //run the ajax
-           getPage();
          }  
       });
       
