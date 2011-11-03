@@ -40,7 +40,7 @@
          if (response.authResponse) {
          
             FB.api('/me', function(response) {
-            
+               
                var myname = response.name,
                    myemail = response.email,
                    mypicture = response.picture;
@@ -54,6 +54,8 @@
                var html = '<span>'+myname+'\'s List</span>';
 
                $('.nav').append(html);
+               
+               window.location = "mylist.php";
                
             });
             
