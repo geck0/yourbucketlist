@@ -55,7 +55,13 @@
 
                $('.nav').append(html);
                
-               window.location = "mylist.php";
+               var href = location.href;
+               
+               if (href.indexOf("mylist") == -1) {
+               
+                  window.location = "mylist.php";
+               
+               }
                
             });
             
