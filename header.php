@@ -71,7 +71,7 @@
               FB.api('/me', function(response) {
                var myname = response.name;
                               
-               var html = '<li><a href="#mylist.php" class=\'active\' rel="ajax">'+myname+'\'s List</a></li>';
+               var html = '<span>'+myname+'\'s List</span>';
 
                $('.nav').append(html);
                
