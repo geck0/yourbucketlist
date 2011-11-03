@@ -17,11 +17,6 @@
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
-    <!-- Le fav and touch icons 
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
   </head>
 
   <body>
@@ -52,7 +47,7 @@
                document.cookie = "name="+myname+";expires=15/02/2012 00:00:00";
                document.cookie = "email="+myemail+";expires=15/02/2012 00:00:00";
                
-               var html = '<li><a href="#mylist.php" rel="ajax">'+myname+'\'s List</a></li>';
+               var html = '<li><a href="mylist.php" rel="ajax">'+myname+'\'s List</a></li>';
 
                $('.nav').append(html);
                
