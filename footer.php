@@ -3,7 +3,7 @@
     <div class="column2">
         	<p>
         	    	<ul type="none"> 
-        				<li><a href="#about.html"rel="ajax" class="">About</a></li> 
+        				<li><a href="#about.html" rel="ajax" class="">About</a></li> 
         				<li><a href="http://yourbucketlistblog.tumblr.com/" class="">Blog</a></li> 
         			</ul>
         			</p>
