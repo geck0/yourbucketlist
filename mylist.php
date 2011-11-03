@@ -1,3 +1,5 @@
+<?php include('header.php'); ?>
+
 <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h1>This is your list.</h1>
@@ -137,3 +139,5 @@ while ($i > 0) {
 <div align="center">
                   <input id="create_submit" class="btn large primary" type="submit" value="Save List" />
                </div>
+               
+               <?php include('footer.php'); ?>
