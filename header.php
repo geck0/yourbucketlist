@@ -76,24 +76,6 @@
                $('.nav').append(html);
                
             });
-              
-              
-              getPage.isLoaded = false;
-           
-              //remove the # value
-              hash = 'mylist.php';
-              
-              //for back button
-              $.history.load(hash);  
-              
-              //clear the selected class and add the class class to the selected link
-              $('a[rel=ajax]').parent().removeClass('active');
-              
-              //hide the content
-              $('#content').fadeTo(1, 0.01);
-              
-              //run the ajax
-              getPage();
                             
           }
       );
