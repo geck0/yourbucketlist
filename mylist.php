@@ -138,7 +138,7 @@ while ($i > 0) {
 
 </fieldset>
           </form>
-<div align="center">
+			   <div align="center">
                   <input id="create_submit" class="btn large primary" type="submit" value="Save List" />
                </div>
                

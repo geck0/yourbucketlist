@@ -14,98 +14,18 @@
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
   </head>
 
   <body>
-  
-   <div id="fb-root"></div>
-	<script>
-	  window.fbAsyncInit = function() {
-	    // init
-	    FB.init({
-	      appId      : '268724529838969',
-	      status     : true, 
-	      cookie     : true,
-	      oauth 	 : true,
-	      xfbml      : true
-	    });
-	    
-	    // check if user is logged in
-	    FB.getLoginStatus(function(response) {
-	    
-         // if logged in, get lists
-         if (response.authResponse) {
-         
-            FB.api('/me', function(response) {
-               
-               var myname = response.name,
-                   myemail = response.email,
-                   mypicture = response.picture;
-                   
-                   console.log(mypicture);
-               
-               
-               document.cookie = "name="+myname+";expires=15/02/2012 00:00:00";
-               document.cookie = "email="+myemail+";expires=15/02/2012 00:00:00";
-               
-               var html = '<span>'+myname+'\'s List</span>';
-
-               $('.nav').append(html);
-               
-               var href = location.href;
-               
-               if (href.indexOf("mylist") == -1) {
-               
-                  window.location = "mylist.php";
-               
-               }
-               
-            });
-            
-         // if not logged in, show login button
-         } else {
-            
-            document.getElementById('login_button').style.display = 'block';
-            document.getElementById('login_tag').style.display = 'block';
-         }
-         
-      });
-       
-      FB.Event.subscribe('auth.login',
-          function(response) {
-              FB.api('/me', function(response) {
-               var myname = response.name;
-                              
-               var html = '<span>'+myname+'\'s List</span>';
-
-               $('.nav').append(html);
-               
-            });
-                            
-          }
-      );
-	    
-	  };
-	(function(d){
-     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     d.getElementsByTagName('head')[0].appendChild(js);
-   }(document));
-	</script>
-
     <nav role="navigation" class="topbar">
       <div class="fill">
         <div class="container">
           <img align="left" width="80" hight="105" src="images/logoicon.png">
-          <a class="brand" href="index.html">Your Bucket List</a>
-          <ul class="nav">
-            
-                        
-          </ul>
+            <a class="brand" href="index.html">Your Bucket List</a>
+            <ul class="nav">
+          
+            </ul>
           <div class="pull-right btn info">BETA!</div>
         </div>
       </div>
