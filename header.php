@@ -22,7 +22,7 @@
       <div class="fill">
         <div class="container">
           <img align="left" width="80" hight="105" src="images/logoicon.png">
-            <a class="brand" href="index.html">Your Bucket List</a>
+            <a class="brand" href="/">Your Bucket List</a>
             <ul class="nav">
           
             </ul>

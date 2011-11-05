@@ -3,7 +3,7 @@
     <div class="column2">
         	<p>
         	    	<ul type="none"> 
-        				<li><a href="#about.html" rel="ajax" class="">About</a></li> 
+        				<li><a href="about.html" class="">About</a></li> 
         				<li><a href="http://yourbucketlistblog.tumblr.com/" class="">Blog</a></li> 
         			</ul>
         			</p>
@@ -20,18 +20,19 @@
         	    <div class="column3">
         	    	<p>
         	    	<ul type="none"> 
-        				<li><a href="#feedback.html" rel="ajax" class="">Feedback</a></li> 
-        				<li><a href="#contact.html" rel="ajax" class="">Contact</a></li> 
+        				<li><a href="feedback.html" class="">Feedback</a></li> 
+        				<li><a href="contact.html" class="">Contact</a></li> 
         			</ul>
         			</p>
         	    </div><!-- end #column3 -->
         	    <div class="column4">
         	    	<p>
         	    	<ul type="none"> 
-        				<li><a href="#press.html" rel="ajax" class="">Press</a></li> 
-        				<li><a href="#careers.html" rel="ajax" class="">Careers</a></li>
+        				<li><a href="press.html" class="">Press</a></li> 
+        				<li><a href="careers.html" class="">Careers</a></li>
         			</ul>
-        			</p>        </div><!-- end #column4 -->
+        			</p>        
+        		</div><!-- end #column4 -->
       <div class="copyright">
       	<p>&copy;yourbucketli.st  2011</p>
       	</div>
