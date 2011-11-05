@@ -47,7 +47,7 @@
 		<script defer src="js/plugins.js"></script>
 		<script defer src="js/script.js"></script>
 		
-		<script type="text/javascript" src="form_submit.js"></script>
+		<script defer src="js/form_submit.js"></script>
 		
 		<!-- Change UA-XXXXX-X to be your site's ID 
 		<script>
