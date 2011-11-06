@@ -133,19 +133,6 @@
 		               document.cookie = "name="+myname+";expires=15/02/2012 00:00:00";
 		               document.cookie = "email="+myemail+";expires=15/02/2012 00:00:00";
 		               
-		               var html = '<span>' + myname + '\'s List</span>' +
-		                   '<img src="' + mypicture + '" />';
-		
-		               $('.nav').append(html);
-		               
-		               var href = location.href;
-		               
-		               if (href.indexOf("mylist") == -1) {
-		               
-		                  window.location = "mylist.php";
-		               
-		               }
-		               
 		            });
 		            
 		         // if not logged in, show login button
