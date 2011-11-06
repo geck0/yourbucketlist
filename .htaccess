@@ -1,10 +1,5 @@
 Options +FollowSymLinks  
 RewriteEngine On  
   
-RewriteCond %{SCRIPT_FILENAME} !-d  
-RewriteCond %{SCRIPT_FILENAME} !-f  
-  
-RewriteRule ^users/(\d+)*$ ./profile.php?id=$1  
-RewriteRule ^threads/(\d+)*$ ./thread.php?id=$1  
-  
-RewriteRule ^search/(.*)$ ./search.php?query=$1
+RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=$1
+RewriteRule ^([a-zA-Z0-9]+)/$ index.php?page=$1
