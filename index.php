@@ -1,3 +1,21 @@
+<?php
+
+$page = $_GET['page'];
+
+if ($page == 'home') {
+   $include = 'landing.php';
+} elseif ($page == '') {
+   $include = 'landing.php';
+} elseif ($page == 'create') {
+   $include = 'mylist.php';
+} elseif ($page == 'edit') {
+   $include = 'mylist.php';
+} else {
+   $include = '404.php';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,14 +71,8 @@
      });
    });
    </script>
-   
-       
-       
-       
-       <?php include('landing.php'); ?>
-       
-       
-       
+
+   <?php include($include); ?>
        
        
     <footer class="container">
