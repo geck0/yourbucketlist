@@ -40,7 +40,13 @@
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/js/quotator.js</string>
+				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/createlist.php</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/mylist.php</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>

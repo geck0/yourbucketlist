@@ -116,16 +116,7 @@
 		   }(document));
 			</script>
 	
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-		<script>window.jQuery||document.write('<script src="js/jquery-1.6.4.min.js"><\/script>');</script>
 		
-		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
-		<script src="http://code.google.com/apis/gears/gears_init.js"></script>
-		    
-		<script defer src="js/plugins.js"></script>
-		<script defer src="js/script.js"></script>
-		
-		<script defer src="js/form_submit.js"></script>
 		
 		
 		<!-- Change UA-XXXXX-X to be your site's ID 
