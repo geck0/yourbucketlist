@@ -1,4 +1,3 @@
-<?php include('header.php'); ?>
 
 <section id="content" class="container">
 
@@ -39,7 +38,5 @@
       	   
       	
             	
+</section> <!-- /container -->
                
-               </section> <!-- /container -->
-               
-               <?php include('footer.php'); ?>

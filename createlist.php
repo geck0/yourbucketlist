@@ -1,5 +1,3 @@
-<?php include('header.php'); ?>
-
 <section id="content" class="container">
 
 <!-- Main hero unit for a primary marketing message or call to action -->
@@ -144,4 +142,3 @@ while ($i > 0) {
                
                </section> <!-- /container -->
                
-               <?php include('footer.php'); ?>
