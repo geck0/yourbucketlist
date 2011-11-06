@@ -84,3 +84,21 @@ ul, li {
 	margin-right: 10px;
 	margin-left: 5px;
 }
+
+#right {
+  width: 360px;
+  float: right;
+}
+
+#loginbtn {
+  background: url('https://s3.amazonaws.com/static.turntable.fm/images/indexlogin/button_fb_sprite.png') 0px 0px no-repeat;
+  width: 314px;
+  height: 63px;
+  cursor: pointer;
+}
+#loginbtn:hover {
+  background-position: 0px -63px;
+}
+#loginbtn:active {
+  background-position: 0px -126px;
+}

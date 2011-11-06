@@ -3,15 +3,15 @@
 <section id="content" class="container">
 <!-- Main hero unit for a primary marketing message or call to action -->
 	<div class="a-unit">
-	  <h1>Kick your bucket list</h1>
-	  <p>Why have a bucket list if you're not going to do it? We'll show you when, where,and how you can achive your bucket list goals. So that you can check them off instead of hanging them on the wall.</p>
-	  <div class"pull-right">
-	      <p id="login_tag" style="display:none;" >
-	      <br />Login with Facebook to get started.</p>
-	      <div class="fb-login-button btn primary large" id="login_button" style="display:none;" data-scope="email,user_checkins,user_location,user_birthday,user_education_history,publish_stream"></div>
-	  	  <span>Login with Facebook</span>
-	  </div>
+	  <h1>What will you do before you die?
+	  </h1>
+	  
+	  <p><h2>Create a list of your life goals. Organise your list and plan it out.<br> Share your list with your friends. Accomplish your goals. Live your dreams. <br>Login to get started!</h2></p>
+	  <div id="right">
+	      <div id="loginbtn" onClick="FB.login(login, {'scope':'publish_actions,offline_access,email,user_about_me,user_birthday'})"></div>
+	           </div>
+	     
 	</div>
 </section> <!-- /container -->
 
-<?php require('footer.php'); ?>
+<?php require('footer.php'); ?> 

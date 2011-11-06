@@ -10,12 +10,6 @@
 		<array>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/index.html</string>
-				<key>StateType</key>
-				<string>DefaultTab</string>
-			</dict>
-			<dict>
-				<key>DocumentURL</key>
 				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/footer.php</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
@@ -34,13 +28,19 @@
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/complete_item.php</string>
+				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/css/styles.css</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/create_list.php</string>
+				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/css/bootstrap.css</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/mattsornson/Sites/yourbucketlist/js/quotator.js</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
