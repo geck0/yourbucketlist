@@ -7,7 +7,7 @@ if ($page == 'home') {
 } elseif ($page == '') {
    $include = 'landing.php';
 } elseif ($page == 'create') {
-   $include = 'mylist.php';
+   $include = 'createlist.php';
 } elseif ($page == 'edit') {
    $include = 'mylist.php';
 } else {
