@@ -103,4 +103,22 @@ ul, li {
   background-position: 0px -126px;
 }
 
+.layer1 {
+margin: 0;
+padding: 0;
+}
+ 
+.heading {
+margin: 1px;
+color: #fff;
+padding: 3px 10px;
+cursor: pointer;
+position: relative;
+background-color:#c30;
+}
+.content {
+padding: 5px 10px;
+background-color:#fafafa;
+}
+p { padding: 5px 0; }
 

@@ -43,3 +43,13 @@
    <script defer src="js/form_submit.js"></script>
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
    
+   <script type="text/javascript">
+   jQuery(document).ready(function() {
+     jQuery(".content").hide();
+     //toggle the componenet with class msg_body
+     jQuery(".heading").click(function()
+     {
+       jQuery(this).next(".content").slideToggle(500);
+     });
+   });
+   </script>

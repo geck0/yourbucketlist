@@ -9,8 +9,13 @@
       </div>
 
       
-   <div class="collapsibleContainer" title="Example Collapsible Panel">
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.... (you get the idea!) </p>
+   <div class="layer1">
+   <p class="heading">Header-1 </p>
+   <div class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit orem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+   <p class="heading">Header-2</p>
+   <div class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit orem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+   <p class="heading">Header-3</p>
+   <div class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit orem ipsum dolor sit amet, consectetuer adipiscing elit</div>
    </div>
       	   
       	
