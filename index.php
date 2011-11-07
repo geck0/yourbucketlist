@@ -1,16 +1,10 @@
 <?php
 
-require('src/facebook.php');
-
-$facebook = new Facebook(array(  
-    'appId'  => '268724529838969',  
-    'secret' => 'cfc94cecaed22dab0d768aade735d706',  
-    'cookie' => true  
-));
-
-/* $session = $facebook->getSession(); */
-
-$page = $_GET['page'];
+if (isset($_GET['page'])) {
+   $page = $_GET['page'];
+} else {
+   $page = '';
+}
 
 if ($page == 'home') {
    $include = 'landing.php';
@@ -22,6 +16,33 @@ if ($page == 'home') {
    $include = 'mylist.php';
 } else {
    $include = '404.php';
+}
+
+require('src/facebook.php');
+
+$facebook = new Facebook(array(  
+    'appId'  => '268724529838969',  
+    'secret' => 'cfc94cecaed22dab0d768aade735d706',  
+    'cookie' => true  
+));
+
+$user = $facebook->getUser();
+
+if ($user) {
+  try {
+    // Proceed knowing you have a logged in user who's authenticated.
+    $user_profile = $facebook->api('/me');
+  } catch (FacebookApiException $e) {
+    error_log($e);
+    $user = null;
+  }
+}
+
+if ($user) {
+  $logoutUrl = $facebook->getLogoutUrl();
+  $include = 'mylist.php';
+} else {
+  $loginUrl = $facebook->getLoginUrl();
 }
 
 ?>
