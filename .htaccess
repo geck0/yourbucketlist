@@ -1,3 +1,9 @@
+AuthName "Dev Server"
+AuthType Basic
+AuthUserFile /var/www/.htpasswd
+AuthGroupFile /dev/null
+require valid-user
+
 Options +FollowSymLinks  
 RewriteEngine On  
 
