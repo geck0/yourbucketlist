@@ -1,5 +1,15 @@
 <?php
 
+require('src/facebook.php');
+
+$facebook = new Facebook(array(  
+    'appId'  => '268724529838969',  
+    'secret' => 'cfc94cecaed22dab0d768aade735d706',  
+    'cookie' => true  
+));
+
+/* $session = $facebook->getSession(); */
+
 $page = $_GET['page'];
 
 if ($page == 'home') {
