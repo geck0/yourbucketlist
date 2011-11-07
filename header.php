@@ -43,6 +43,8 @@
    <script defer src="js/form_submit.js"></script>
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
    
+   
+   <!-- /accordian  -->
    <script type="text/javascript">
    jQuery(document).ready(function() {
      jQuery(".content").hide();
@@ -53,3 +55,20 @@
      });
    });
    </script>
+   <!-- /accordian  -->
+   
+   <!-- kiss metrics -->
+   <script type="text/javascript">
+     var _kmq = _kmq || [];
+     function _kms(u){
+       setTimeout(function(){
+         var s = document.createElement('script'); var f = document.getElementsByTagName('script')[0]; s.type = 'text/javascript'; s.async = true;
+         s.src = u; f.parentNode.insertBefore(s, f);
+       }, 1);
+     }
+     _kms('//i.kissmetrics.com/i.js');_kms('//doug1izaerwt3.cloudfront.net/4f0f29789d36ec9d3e57dcea122fd3a797a25cc5.1.js');
+   </script>
+      <!-- /kiss metrics -->
+   
+   
+   
