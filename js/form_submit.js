@@ -15,7 +15,7 @@ function validation() {
       
       $.ajax({  
         type: "POST",  
-        url: "create_list.php",  
+        url: "createlist.php",  
         data: dataString,  
         success: function() {  
            
@@ -41,7 +41,7 @@ function delete_item(item_id) {
    
    $.ajax({  
         type: "POST",  
-        url: "delete_item.php",  
+        url: "deleteitem.php",  
         data: dataString,  
         success: function() {
            var this_id = "#item"+item_id;
@@ -65,7 +65,7 @@ function complete_item(item_id) {
    
    $.ajax({  
         type: "POST",  
-        url: "complete_item.php",  
+        url: "completeitem.php",  
         data: dataString,  
         success: function() {
            var this_id = "#item"+item_id;
