@@ -14,6 +14,8 @@ if ($page == 'home') {
    $include = 'createlist.php';
 } elseif ($page == 'edit') {
    $include = 'mylist.php';
+} elseif ($page == 'test') {
+   $include = 'test.php';
 } else {
    $include = '404.php';
 }

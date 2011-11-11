@@ -3,7 +3,6 @@
 	$(document).ready(function () {
 	
 		var list = [],
-			postString = '',
 			email = getCookie("email"),
 			name = getCookie("name");
 		
@@ -11,6 +10,7 @@
 		
 		function submitHandler () {
 			$('#addItemButton').click(function () {
+				var postString = '';
 			
 				addToList();
 				createAndPostString();
@@ -22,12 +22,18 @@
 			var listItem = '';
 		
 			listItem = $('#listInput').val();
-			$('<div><h2>' + listItem + '</h2></div>').insertBefore($('#bucketlist > div:first');
+			
+			if (listItem != null) {
+				$('<div><h2>' + listItem + '</h2></div>').insertBefore($('#bucketList > div:first'));
+			} else {
+				return false;
+			}
 		
 		}
 		
 		function createAndPostString () {
-		
+			var postString = '';
+			
 			list = $('#bucketList > div > h2').map(function() { return this.innerHTML; });
 			
 			for (var i = 0, j = list.length; i < j; i++) {
