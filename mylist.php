@@ -1,3 +1,8 @@
+<?php
+$user = new CatalystUser();
+
+?>
+
 
 <section id="content" class="container">
 
@@ -7,6 +12,7 @@
         <p>There are many like it, but this one is yours. What can you check off today?</p>
       </div>
 
+<h1>test</h1>
       
    <div class="listresults">
    <p class="heading">Result-1 </p>

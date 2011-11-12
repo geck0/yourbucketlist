@@ -4,6 +4,10 @@ class CatalystUser {
 
    public $id;
    public $email;
+   public $name;
+   public $posted;
+   public $oauth_provider;
+   public $oauth_uid;
    
    // GET ALL USERS //
    
@@ -38,9 +42,13 @@ class CatalystUser {
    
    // CONSTRUCT //
    
-   public function __construct($id = 0, $email = '') {
+   public function __construct($id = 0, $email = '', $name = '', $posted = 0, $oauth_provider = '', $oauth_uid = '') {
       $this->id = $id;
       $this->email = $email;
+      $this->name = $name;
+      $this->posted = $posted;
+      $this->oauth_provider = $oauth_provider;
+      $this->oauth_uid = $oauth_uid;
    }
 }
 
