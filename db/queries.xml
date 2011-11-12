@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<queries>
+  <query name="users.insert">
+    <![CDATA[
+      INSERT INTO users (
+        email,
+        name,
+        posted,
+        oauth_provider,
+        oauth_id
+      )
+      VALUES (
+        :email,
+        :name,
+        :posted,
+        :oauth_provider,
+        :oauth_id
+      )
+    ]]>
+  </query>
+  
+  <query name="users.getByEmail">
+    <![CDATA[
+      SELECT * 
+      FROM users
+      WHERE 'email' = :email
+    ]]>
+  </query>
+
+  <query name="items.insert">
+    <![CDATA[
+      INSERT INTO items (
+        name,
+        user_id,
+        priority,
+        status,
+        added
+      )
+      VALUES (
+        :name,
+        :user_id,
+        :priority,
+        :status,
+        NOW()
+      )
+    ]]>
+  </query>
+  
+  <query name="items.getByUser">
+    <![CDATA[
+      SELECT * 
+      FROM items
+      WHERE 'user_id' = :user_id
+    ]]>
+  </query>
+
+</queries>
