@@ -782,11 +782,6 @@ textarea.xxlarge,
 select.xxlarge {
   width: 600px;
 }
-.createlist {
-  width: 700px;
-  
-
-}
 textarea.xxlarge {
   overflow-y: auto;
 }

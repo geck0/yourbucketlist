@@ -5,25 +5,40 @@
       INSERT INTO users (
         email,
         name,
-        posted,
+        oauth_provider,
+        oauth_uid
+      )
+      VALUES (
+        :email,
+        :name,
+        :oauth_provider,
+        :oauth_uid
+      )
+    ]]>
+  </query>
+  
+  <query name="users.update">
+    <![CDATA[
+      INSERT INTO users (
+        email,
+        name,
         oauth_provider,
         oauth_id
       )
       VALUES (
         :email,
         :name,
-        :posted,
         :oauth_provider,
         :oauth_id
       )
     ]]>
   </query>
   
-  <query name="users.getByEmail">
+  <query name="users.getByOauthUid">
     <![CDATA[
       SELECT * 
       FROM users
-      WHERE 'email' = :email
+      WHERE oauth_uid = :oauth_uid
     ]]>
   </query>
 
@@ -39,10 +54,29 @@
       VALUES (
         :name,
         :user_id,
-        :priority,
-        :status,
+        0,
+        0,
         NOW()
       )
+    ]]>
+  </query>
+    
+  <query name="items.deleteById">
+    <![CDATA[
+      DELETE 
+      FROM items
+      WHERE user_id = :user_id
+      AND id = :item_id
+    ]]>
+  </query>
+
+  <query name="items.updateById">
+    <![CDATA[
+      UPDATE items
+      SET status = 1
+      WHERE user_id = :user_id
+      AND id = :item_id
+      LIMIT 1
     ]]>
   </query>
   
@@ -50,7 +84,17 @@
     <![CDATA[
       SELECT * 
       FROM items
-      WHERE 'user_id' = :user_id
+      WHERE user_id = :user_id
+      ORDER BY status DESC, id ASC
+    ]]>
+  </query>
+  
+  <query name="items.getById">
+    <![CDATA[
+      SELECT * 
+      FROM items
+      WHERE user_id = :user_id
+      AND id = :item_id
     ]]>
   </query>
 

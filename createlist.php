@@ -1,22 +1,7 @@
 <section id="content" class="container">
 
-<!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="g-unit">
-        <h1>Create your list!</h1>
-        <p>What do you want to do before you die?</p>
-      </div>
-
 <?php
 
-$username = "root";
-$password = "yourbucketlist";
-$database = "yourbucketlist";
-
-$sql_conn = mysql_connect(localhost,$username,$password);
-mysql_select_db($database,$sql_conn);
-
-$name = $_COOKIE['name'];
-$email = $_COOKIE['email'];
 
 $query = "SELECT * FROM suggestions";
 $suggestions = mysql_query($query);
@@ -135,10 +120,11 @@ while ($i > 0) {
 ?>
 
 </fieldset>
-          </form>
-			   <div align="center">
-                  <input id="create_submit" class="btn large primary" type="submit" value="Save List" />
-               </div>
+</form>
+
+<div align="center">
+   <input id="create_submit" class="btn large primary" type="submit" value="Save List" />
+</div>
                
-               </section> <!-- /container -->
-               
+</section>
+

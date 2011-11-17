@@ -1,18 +1,11 @@
- <section id="content" class="container">
-
 <?php
-$item_id = $_REQUEST['item_id'];
+session_start();
 
-$username = "root";
-$password = "yourbucketlist";
-$database = "yourbucketlist";
+require_once 'common.php';
 
-$sql_conn = mysql_connect(localhost,$username,$password);
-mysql_select_db($database,$sql_conn);
+$item_id = $_GET['item_id'];
+$user_id = $_SESSION['user_id'];
 
-$query = "UPDATE items SET status = 1 WHERE id = '$item_id' LIMIT 1";
-
-$result = mysql_query($query);
+$r = CatalystUser::updateUserItem($user_id, $item_id);
 
 ?>
-   </section> <!-- /container -->

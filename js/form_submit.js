@@ -1,4 +1,4 @@
-function validation() { 
+/* function validation() { 
    $("#create_submit").click(function() { 
       updateStatusViaJavascriptAPICalling('I just created my bucket list.  Check it out and make your own!');
       
@@ -24,7 +24,7 @@ function validation() {
       
       return false;
    });
-}
+} */
 
 function get_cookie ( cookie_name )
 {
@@ -36,47 +36,47 @@ function get_cookie ( cookie_name )
     return null;
 }
 
+function new_item(name) {
+   var dataString = 'item_name=' + name;
+   
+   $.ajax({  
+      type: "GET",  
+      url: "newitem.php",  
+      data: dataString,  
+      success: function( data ) {
+         var item = $('.listresults').append(data);
+         $(".listresults :last-child .content").hide();
+         $(".listresults :last-child .heading").click(function() {
+            $(this).next(".content").slideToggle(100);
+         });
+      }  
+   });
+}
+
 function delete_item(item_id) {
    var dataString = 'item_id=' + item_id;
    
    $.ajax({  
-        type: "POST",  
-        url: "deleteitem.php",  
-        data: dataString,  
-        success: function() {
-           var this_id = "#item"+item_id;
-           var sugg_id = "#suggestion"+item_id;
-           $(this_id).remove();
-           $(sugg_id).remove();
-           
-           console.log('deleted');
-           
-           var field = '<div class="clearfix"><div class="input"><input id="input'+item_id+'" class="createlist"  placeholder="New.." type="text" size="30" name="input'+item_id+'"></div></div>';
-           
-           $('#list_fieldset').append(field);
-           
-        }  
-      });
-   
+      type: "GET",  
+      url: "deleteitem.php",  
+      data: dataString,  
+      success: function() {
+         $('#'+item_id).fadeOut(300, function() { $(this).remove(); })
+      }  
+   });   
 }
 
 function complete_item(item_id) {
    var dataString = 'item_id=' + item_id;
    
    $.ajax({  
-        type: "POST",  
-        url: "completeitem.php",  
-        data: dataString,  
-        success: function() {
-           var this_id = "#item"+item_id;
-           var sugg_id = "#suggestion"+item_id;
-           $(this_id).css('background-color','#b7ecbd');
-           $(sugg_id).remove();
-        }  
-      });
-      
-      var string = $('#item' + item_id).children()[2].innerHTML;
-      
-      updateStatusViaJavascriptAPICalling('I just checked "' + string + '" off my bucket list.  What have you done lately?');
-   
+      type: "GET",  
+      url: "completeitem.php",  
+      data: dataString,  
+      success: function() {
+         $('#'+item_id+' p').css('background-color','#b7ecbd');
+         $('#complete_'+item_id).remove();
+         $('#edit_'+item_id).remove();
+      }  
+   });   
 }
