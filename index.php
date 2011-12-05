@@ -9,66 +9,74 @@ if (isset($_GET['page'])) {
    $page = '';
 }
 
+$list = 0;
+
 if ($page == 'home') {
    $include = 'landing.php';
 } elseif ($page == '') {
    $include = 'landing.php';
-} elseif ($page == 'create') {
-   $include = 'createlist.php';
 } elseif ($page == 'edit') {
    $include = 'mylist.php';
-} elseif ($page == 'test') {
-   $include = 'test.php';
+} elseif (is_numeric($page)) {
+   $list = $page;
+   $include = 'list.php';
 } else {
    $include = '404.php';
 }
 
-require('src/facebook.php');
-
-$facebook = new Facebook(array(  
-    'appId'  => '268724529838969',  
-    'secret' => 'cfc94cecaed22dab0d768aade735d706',  
-    'cookie' => true  
-));
-
-$fb_user = $facebook->getUser();
-
-if ($fb_user) {
-   try {
-      $user_profile = $facebook->api('/me');
-   } catch (FacebookApiException $e) {
-      error_log($e);
-      $fb_user = null;
-   }
-}
-
-if ($fb_user) {
-   $logoutUrl = $facebook->getLogoutUrl();
+if (!$list) {
+   require('src/facebook.php');
    
-   $user = CatalystUser::getByOauthUid($fb_user);
+   $facebook = new Facebook(array(  
+       'appId'  => '268724529838969',  
+       'secret' => 'cfc94cecaed22dab0d768aade735d706',  
+       'cookie' => true  
+   ));
+   
+   $fb_user = $facebook->getUser();
+   
+   if ($fb_user) {
+      try {
+         $user_profile = $facebook->api('/me');
+      } catch (FacebookApiException $e) {
+         error_log($e);
+         $fb_user = null;
+      }
+   }
+   
+   if ($fb_user) {
+      $logoutUrl = $facebook->getLogoutUrl();
       
-   if (!$user) {
-            
-      $user = new CatalystUser();
-      $user->email = $user_profile['email'];
-      $user->name = $user_profile['name'];
-      $user->oauth_provider = 'Facebook';
-      $user->oauth_uid = $user_profile['id'];
-            
-      $user->save();
-            
       $user = CatalystUser::getByOauthUid($fb_user);
-      
-   }
-   
-   $_SESSION['user_id'] = $user->id;
          
-   $items = $user->getItems();
-   
-   $include = 'mylist.php';
-   
-} else {
-  $loginUrl = $facebook->getLoginUrl();
+      if (!$user) {
+               
+         $user = new CatalystUser();
+         $user->email = $user_profile['email'];
+         $user->name = $user_profile['name'];
+         $user->oauth_provider = 'Facebook';
+         $user->oauth_uid = $user_profile['id'];
+               
+         $user->save();
+               
+         $user = CatalystUser::getByOauthUid($fb_user);
+         
+      }
+      
+      $_SESSION['user_id'] = $user->id;
+            
+      $items = $user->getItems();
+      
+      $include = 'mylist.php';
+      
+   } else {
+      $params = array(
+         scope => 'email, user_about_me, publish_actions, user_location',
+         redirect_uri => 'http://dev.yourbucketli.st/',
+         display => 'popup'
+      );
+      $loginUrl = $facebook->getLoginUrl($params);
+   }
 }
 
 ?>
@@ -96,8 +104,13 @@ if ($fb_user) {
    <script defer src="js/plugins.js"></script>
    <script defer src="js/script.js"></script>
    <script defer src="js/form_submit.js"></script>
+   <script defer src="js/bootstrap/bootstrap-modal.js"></script>
    
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+   
+   <script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
    
    <script type="text/javascript">
    jQuery(document).ready(function() {
@@ -110,9 +123,12 @@ if ($fb_user) {
    });
    </script>
 
-  </head>
+   </head>
 
-  <body>
+   <body>
+   <div id='fb-root'></div>
+   <script src='http://connect.facebook.net/en_US/all.js'></script>
+  
     <nav role="navigation" class="topbar">
       <div class="fill">
         <div class="container">
@@ -129,6 +145,7 @@ if ($fb_user) {
    <?php include($include); ?>
 
    <footer class="container">
+      
       <div class="column2">
          <p>
             <ul type="none"> 

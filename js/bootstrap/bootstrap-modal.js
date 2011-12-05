@@ -233,12 +233,12 @@
  /* MODAL DATA- IMPLEMENTATION
   * ========================== */
 
-  $(document).ready(function () {
+/*  $(document).ready(function () {
     $('body').delegate('[data-controls-modal]', 'click', function (e) {
       e.preventDefault()
       var $this = $(this).data('show', true)
       $('#' + $this.attr('data-controls-modal')).modal( $this.data() )
     })
   })
-
+*/
 }( window.jQuery || window.ender );

@@ -39,6 +39,7 @@
        
    <script defer src="js/plugins.js"></script>
    <script defer src="js/script.js"></script>
+   <script defer src="js/bootstrap/bootstrap-modal.js"></script>
    
    <script defer src="js/form_submit.js"></script>
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>

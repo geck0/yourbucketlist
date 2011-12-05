@@ -1,6 +1,13 @@
 <?php
 $items = $user->getItems();
 
+$title_to_share = $user->name."'s Bucket List";
+$url_to_share = "http://dev.yourbucketli.st/".$user->oauth_uid;
+
+$url = 'http://facebook.com/sharer.php?u='.$url_to_share.'&t='.$title_to_share;
+        
+$url = urlencode($url);            
+
 ?>
 
 <section id="content" class="container">
@@ -35,6 +42,7 @@ $items = $user->getItems();
                complete_item(<?php echo $row['id'];?>);
                e.stopPropagation();
                document.getElementById('new_item').focus()
+               shareCompletionToFeed('<?php echo $row['name'] ?>');
             });
             
             $('#delete_<?php echo $row['id'];?>').click(function (e) {
@@ -58,7 +66,10 @@ $items = $user->getItems();
             <input id="create_submit" class="btn large primary" type="submit" value="Add" />
             <script>document.getElementById('new_item').focus()</script>
          </form>
-      </div>
+         <br />
+         <br />
+                  
+         <a id="share" href="#" onclick='shareListToFeed(); return false;' class="btn large primary">Share on Facebook</a>
       
       <script type="text/javascript">
          
@@ -69,7 +80,51 @@ $items = $user->getItems();
             document.getElementById('new_item').focus();
             return false;
          });
+
+      FB.init({appId: "268724529838969", status: true, cookie: true});
+
+      function shareListToFeed() {
+
+        var obj = {
+          method: 'feed',
+          link: "<?php echo $url_to_share; ?>",
+          picture: 'http://yourbucketli.st/images/logoicon.png',
+          name: "<?php echo $title_to_share; ?>",
+          caption: '<?php echo $user->name; ?> created a bucket list on Your Bucket List.',
+        };
+
+        function callback(response) {
+          
+        }
+
+        FB.ui(obj, callback);
+      }
+      
+      function shareCompletionToFeed(item) {
+
+        var obj = {
+          method: 'feed',
+          link: "<?php echo $url_to_share; ?>",
+          picture: 'http://yourbucketli.st/images/logoicon.png',
+          name: "<?php echo $user->name; ?> checked off '"+item+"' from their bucket list.",
+          caption: 'What have you done with your life?',
+        };
+
+        function callback(response) {
+          
+        }
+
+        FB.ui(obj, callback);
+      }
+      
+    
       </script>
-  
+
+         </div>
+       </div>
+     </section>     
+      
+      
+        
 </section>
                
