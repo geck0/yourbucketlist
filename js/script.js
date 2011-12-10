@@ -2,6 +2,16 @@
 
 */
 
+$(document).ready(function() {
+  $(".content").hide();
+  //toggle the componenet with class msg_body
+  $(".heading").click(function()
+  {
+    $(this).next(".content").slideToggle(100);
+  });
+});
+
+
 // fb status
 function updateStatusViaJavascriptAPICalling(message){
 	var status = message,

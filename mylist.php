@@ -20,7 +20,7 @@ $url = urlencode($url);
       
       <div id="<?php echo $row['id'];?>">
       
-         <p class="heading" <?php if ($row['status']) { echo 'style="background-color:#b7ecbd;"'; } ?>><?php echo $row['name'];?>
+         <div class="heading" <?php if ($row['status']) { echo 'style="background-color:#b7ecbd;"'; } ?>><?php echo $row['name'];?>
             <?php if (!$row['status']) { ?>
             <a class='btn success' title='Complete!' id="complete_<?php echo $row['id'];?>" style='float:right;margin-right:10px;'>&#10003;</a>
             <?php } ?>
@@ -28,7 +28,7 @@ $url = urlencode($url);
             <?php if (!$row['status']) { ?>
             <a class='btn' title='Edit' id="edit_<?php echo $row['id'];?>" style='float:right;margin-right:10px;'>Edit</a>
             <?php } ?>
-         </p>
+         </div>
          
          <div class="content">
          	<div class="option1">Click here for option 1</div>

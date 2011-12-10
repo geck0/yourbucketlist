@@ -17,6 +17,16 @@ if ($page == 'home') {
    $include = 'landing.php';
 } elseif ($page == 'edit') {
    $include = 'mylist.php';
+} elseif ($page == 'about') {
+   $include = 'bottomlinks/about.html';
+} elseif ($page == 'feedback') {
+   $include = 'bottomlinks/feedback.html';
+} elseif ($page == 'press') {
+   $include = 'bottomlinks/press.html';
+} elseif ($page == 'careers') {
+   $include = 'bottomlinks/careers.html';
+} elseif ($page == 'contact') {
+   $include = 'bottomlinks/contact.html';
 } elseif (is_numeric($page)) {
    $list = $page;
    $include = 'list.php';
@@ -106,14 +116,15 @@ if (!$list) {
    <div id='fb-root'></div>
    <script src='http://connect.facebook.net/en_US/all.js'></script>
   
-    <nav role="navigation" class="fill topbar">
+    <header role="navigation" class="topbar">
+      <div class="fill">
         <div class="container">
-          <img align="left" width="80" hight="105" src="images/logoicon.png">
-            <a class="brand" href="/">Your Bucket List</a>
-            
-          <div class="pull-right btn info">beta</div>
+          <img align="left" src="images/logoicon.png" />
+          <h1 class="brand">Your Bucket List</h1>
+          <div class="pull-right label notice">beta</div>
         </div>
-    </nav> <!-- /navigation -->
+      </div>
+    </header> <!-- /navigation -->
 
    <?php include($include); ?>
 
@@ -122,7 +133,7 @@ if (!$list) {
       <div class="column2">
          <p>
             <ul type="none"> 
-               <li><a href="about.html" class="">About</a></li> 
+               <li><a href="/?page=about" class="">About</a></li> 
                <li><a href="http://yourbucketlistblog.tumblr.com/" class="">Blog</a></li> 
             </ul>
          </p>
@@ -139,16 +150,16 @@ if (!$list) {
       <div class="column3">
          <p>
             <ul type="none"> 
-               <li><a href="feedback.html" class="">Feedback</a></li> 
-               <li><a href="contact.html" class="">Contact</a></li> 
+               <li><a href="/?page=feedback" class="">Feedback</a></li> 
+               <li><a href="/?page=contact" class="">Contact</a></li> 
             </ul>
          </p>
       </div><!-- end #column3 -->
       <div class="column4">
          <p>
             <ul type="none"> 
-               <li><a href="press.html" class="">Press</a></li> 
-               <li><a href="careers.html" class="">Careers</a></li>
+               <li><a href="/?page=press" class="">Press</a></li> 
+               <li><a href="/?page=careers" class="">Careers</a></li>
             </ul>
          </p>        
       </div><!-- end #column4 -->
@@ -157,6 +168,7 @@ if (!$list) {
       </div>
    </footer> <!-- /footer -->
    
+   <section id="scripts">
    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
    <script>window.jQuery||document.write('<script src="js/jquery-1.6.4.min.js"><\/script>');</script>
           
@@ -165,9 +177,8 @@ if (!$list) {
    <script defer src="js/form_submit.js"></script>
    <script defer src="js/bootstrap/bootstrap-modal.js"></script>
    
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-   
    <script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
    	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+   	</section>
 </body>
 </html>

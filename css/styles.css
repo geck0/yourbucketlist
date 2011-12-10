@@ -25,6 +25,33 @@ ul, li {
   font-weight: 200;
   line-height: 27px;
 }
+.createlist {
+  width: 700px;
+}
+.topbar .brand {
+  padding: 8px 0 12px;
+  margin-left: 0;
+  font-size: 35px;
+  margin-bottom: 0;
+}
+.topbar {
+	height: 57px;
+}
+.topbar .label {
+	margin-right: 12px;
+	margin-top: 16px;
+	padding: 2px 10px;
+}
+.topbar img {
+	width: 80px;
+}
+.a-unit {
+    background-color: #F5F5F5;
+    border-radius: 6px 6px 6px 6px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 25px;
+}
       
       
       
@@ -86,7 +113,7 @@ margin-left: 5px;
 }
 
 #right {
-  width: 360px;
+  width: 314px;
   float: right;
 }
 
@@ -95,6 +122,7 @@ margin-left: 5px;
   width: 314px;
   height: 63px;
   cursor: pointer;
+  display: block;
 }
 #loginbtn:hover {
   background-position: 0px -63px;
