@@ -85,9 +85,9 @@ if (!$list) {
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Yourbucketli.st - Kick your bucket list</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>LifeCataly.st</title>
+    <meta name="description" content="Create a list of what you want to accomplish in your life, and we help you accomplish those goals.">
+    <meta name="author" content="&copy; Life Catalyst 2011">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -97,31 +97,8 @@ if (!$list) {
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-   <script>window.jQuery||document.write('<script src="js/jquery-1.6.4.min.js"><\/script>');</script>
-          
-   <script defer src="js/plugins.js"></script>
-   <script defer src="js/script.js"></script>
-   <script defer src="js/form_submit.js"></script>
-   <script defer src="js/bootstrap/bootstrap-modal.js"></script>
-   
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-   
-   <script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    
 	<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-   
-   <script type="text/javascript">
-   jQuery(document).ready(function() {
-     jQuery(".content").hide();
-     //toggle the componenet with class msg_body
-     jQuery(".heading").click(function()
-     {
-       jQuery(this).next(".content").slideToggle(100);
-     });
-   });
-   </script>
 
    </head>
 
@@ -129,17 +106,13 @@ if (!$list) {
    <div id='fb-root'></div>
    <script src='http://connect.facebook.net/en_US/all.js'></script>
   
-    <nav role="navigation" class="topbar">
-      <div class="fill">
+    <nav role="navigation" class="fill topbar">
         <div class="container">
           <img align="left" width="80" hight="105" src="images/logoicon.png">
             <a class="brand" href="/">Your Bucket List</a>
-            <ul class="nav">
-          
-            </ul>
-          <div class="pull-right btn info">BETA!</div>
+            
+          <div class="pull-right btn info">beta</div>
         </div>
-      </div>
     </nav> <!-- /navigation -->
 
    <?php include($include); ?>
@@ -183,5 +156,18 @@ if (!$list) {
          <p>&copy;yourbucketli.st  2011</p>
       </div>
    </footer> <!-- /footer -->
+   
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+   <script>window.jQuery||document.write('<script src="js/jquery-1.6.4.min.js"><\/script>');</script>
+          
+   <script defer src="js/plugins.js"></script>
+   <script defer src="js/script.js"></script>
+   <script defer src="js/form_submit.js"></script>
+   <script defer src="js/bootstrap/bootstrap-modal.js"></script>
+   
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+   
+   <script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+   	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 </body>
 </html>
